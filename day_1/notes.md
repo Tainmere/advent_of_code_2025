@@ -16,9 +16,13 @@
 - _"The actual password is the number of times the dial is left pointing at 0 after any rotation in the sequence."_
   - i.e. count how often we land at `0`
 
+running solution takes ~3.1 s
+
 ## Puzzle 2
 
 - also count when crossing over 0
   - they explicitly mention high rotations
     - puzzle input has high values like `R986` & `R573`
   - what if it ends at 0
+
+running solution takes ~4.5 s

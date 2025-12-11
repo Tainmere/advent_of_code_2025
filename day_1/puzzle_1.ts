@@ -16,6 +16,9 @@ const readPuzzleData = async () => {
 const solvePuzzle = async () => {
   const data = await readPuzzleData();
 
+  const solvingPuzzleMessage = 'Solving Puzzle 1 took';
+
+  console.time(solvingPuzzleMessage);
   type Accumulator = [Position, ZeroCount];
 
   const [finalPosition, zeroCount] = data.reduce<Accumulator>(
@@ -27,6 +30,7 @@ const solvePuzzle = async () => {
     },
     [initialPosition, 0]
   );
+  console.timeEnd(solvingPuzzleMessage);
 
   writeSolution('day_1/solution_1', `Zero was hit ${zeroCount} times.\n`);
 };

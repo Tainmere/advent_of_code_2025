@@ -30,8 +30,11 @@ export const processPuzzleData = (data: Instruction[]) => {
 
 const solvePuzzle = async () => {
   const data = await readPuzzleData();
+  const solvingPuzzleMessage = 'Solving Puzzle 2 took';
 
+  console.time(solvingPuzzleMessage);
   const [_, zeroCount] = processPuzzleData(data);
+  console.timeEnd(solvingPuzzleMessage);
 
   writeSolution('day_1/solution_2', `Zero was hit ${zeroCount} times.\n`);
 };

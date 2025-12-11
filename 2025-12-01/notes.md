@@ -18,3 +18,5 @@
 
 - also count when crossing over 0
   - they explicitly mention high rotations
+    - puzzle input has high values like `R986` & `R573`
+  - what if it ends at 0

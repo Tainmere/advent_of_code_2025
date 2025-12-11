@@ -1,12 +1,13 @@
 import { readPuzzleInput, readPuzzleInputAsStream } from '../utils/importPuzzle';
 import { Instruction, Position, ZeroCount } from './types';
 import { processPuzzleInstruction } from './puzzle_1_utils';
+import { writeSolution } from '../utils/writeSolution';
 
 const initialPosition = 50;
 const digitCount = 100;
 
 const readPuzzleData = async () => {
-  const puzzleLocation = '2025-12-01/puzzle_1_input.txt';
+  const puzzleLocation = 'day_1/puzzle_1_input.txt';
 
   const data: Instruction[] = await readPuzzleInput(puzzleLocation);
   return data;
@@ -27,7 +28,7 @@ const solvePuzzle = async () => {
     [initialPosition, 0]
   );
 
-  console.log(finalPosition, zeroCount);
+  writeSolution('day_1/solution_1', `Zero was hit ${zeroCount} times.\n`);
 };
 
 solvePuzzle();

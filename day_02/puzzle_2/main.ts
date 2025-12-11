@@ -5,15 +5,15 @@ const puzzle_file = 'day_02/puzzle_input.txt';
 
 export const solvePuzzle = async (testCase?: string) => {
   const input = testCase ? testCase : await readPuzzleInput(puzzle_file);
-  console.time(`parsing day 2 puzzle 1`);
+  console.time(`parsing day 2 puzzle 2`);
   const parsedInput = parsePuzzleInput(input);
-  console.timeEnd(`parsing day 2 puzzle 1`);
+  console.timeEnd(`parsing day 2 puzzle 2`);
 
-  console.time(`solving day 2 puzzle 1 took`);
+  console.time(`solving day 2 puzzle 2 took`);
   const result = parsedInput.reduce<number>((invalidIdCount, range) => {
     return invalidIdCount + calculateInvalidIdCountInRange(range as [string, string]);
   }, 0);
-  console.timeEnd(`solving day 2 puzzle 1 took`);
+  console.timeEnd(`solving day 2 puzzle 2 took`);
 
   return result;
 };
@@ -21,11 +21,10 @@ export const solvePuzzle = async (testCase?: string) => {
 const parsePuzzleInput = (input: string) => input.split(',').map((range) => range.split('-'));
 
 export const calculateInvalidIdCountInRange = ([start, stop]: [string, string]) => {
-  if (doesIdHaveOddDigitCount(start) && start.length === stop.length) return 0;
-
   let invalidIdCount = 0;
   const startInt = parseInt(start);
   const stopInt = parseInt(stop);
+
   for (let id = startInt; id <= stopInt; id++) {
     if (isIdInvalid(id)) {
       invalidIdCount += id;
@@ -34,19 +33,23 @@ export const calculateInvalidIdCountInRange = ([start, stop]: [string, string]) 
   return invalidIdCount;
 };
 
-const doesIdHaveOddDigitCount = (id: string) => id.length % 2 === 1;
-
 export const isIdInvalid = (id: number) => {
   const idString = id.toString();
-  if (doesIdHaveOddDigitCount(idString)) {
-    return false;
+
+  if (idString.length === 1) return false;
+
+  if (idString[0].repeat(idString.length) === idString) {
+    return true;
   }
 
-  const halfStringLength = idString.length / 2;
-  const firstHalf = idString.slice(0, halfStringLength);
-  const secondHalf = idString.slice(-halfStringLength);
+  for (let range = 2; range <= idString.length / 2; range++) {
+    const substringRepetitions = idString.length / range;
+    const doesRangeFactor = substringRepetitions === Math.floor(substringRepetitions);
+    if (!doesRangeFactor) continue;
 
-  return firstHalf === secondHalf;
+    if (idString.slice(0, range).repeat(substringRepetitions) === idString) return true;
+  }
+  return false;
 };
 
 solvePuzzle().then((result) =>

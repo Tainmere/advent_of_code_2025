@@ -1,13 +1,13 @@
-import { readMultilinePuzzleInput } from '../utils/importPuzzle';
-import { Instruction, Position, ZeroCount } from './types';
-import { processPuzzleInstruction } from './puzzle_2_utils';
-import { writeSolution } from '../utils/writeSolution';
+import { readMultilinePuzzleInput } from '../../utils/importPuzzle';
+import { Instruction, Position, ZeroCount } from '../types';
+import { processPuzzleInstruction } from './util';
+import { writeSolution } from '../../utils/writeSolution';
 
 const initialPosition = 50;
 const digitCount = 100;
 
 const readPuzzleData = async () => {
-  const puzzleLocation = 'day_1/puzzle_1_input.txt';
+  const puzzleLocation = 'day_01/puzzle_input.txt';
 
   const data: Instruction[] = await readMultilinePuzzleInput(puzzleLocation);
   return data;
@@ -36,7 +36,7 @@ const solvePuzzle = async () => {
   const [_, zeroCount] = processPuzzleData(data);
   console.timeEnd(solvingPuzzleMessage);
 
-  writeSolution('day_1/solution_2', `Zero was hit ${zeroCount} times.\n`);
+  writeSolution('day_01/solution_2', `Zero was hit ${zeroCount} times.\n`);
 };
 
 solvePuzzle();

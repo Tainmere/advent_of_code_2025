@@ -1,4 +1,4 @@
-import { isIdInvalid, calculateInvalidIdCountInRange, solvePuzzle } from './puzzle_1';
+import { isIdInvalid, calculateInvalidIdCountInRange, solvePuzzle } from './main';
 
 describe(`${solvePuzzle.name}()`, () => {
   test('properly solves the given test example', async () => {

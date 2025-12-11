@@ -1,4 +1,4 @@
-import { Position, Instruction, Rotation, Direction } from './types';
+import { Position, Instruction, Rotation, Direction } from '../types';
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
 const modulo = (digit: number, divisor: number) => ((digit % divisor) + divisor) % divisor;

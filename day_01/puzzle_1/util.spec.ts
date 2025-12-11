@@ -1,5 +1,5 @@
-import { rotateDial } from './puzzle_1_utils';
-import { Direction } from './types';
+import { rotateDial } from './util';
+import { Direction } from '../types';
 
 describe(`${rotateDial.name}()`, () => {
   let _rotateDial = rotateDial(100);

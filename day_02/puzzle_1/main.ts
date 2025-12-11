@@ -1,7 +1,7 @@
-import { readPuzzleInput } from '../utils/importPuzzle';
-import { writeSolution } from '../utils/writeSolution';
+import { readPuzzleInput } from '../../utils/importPuzzle';
+import { writeSolution } from '../../utils/writeSolution';
 
-const puzzle_file = 'day_2/puzzle_1_input.txt';
+const puzzle_file = 'day_02/puzzle_input.txt';
 
 export const solvePuzzle = async (testCase?: string) => {
   const input = testCase ? testCase : await readPuzzleInput(puzzle_file);
@@ -50,5 +50,5 @@ export const isIdInvalid = (id: number) => {
 };
 
 solvePuzzle().then((result) =>
-  writeSolution('day_2/solution_1', `Invalid ID Count is '${result}'`)
+  writeSolution('day_02/solution_1', `Invalid ID Count is '${result}'\n`)
 );

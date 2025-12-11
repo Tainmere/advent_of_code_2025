@@ -1,4 +1,4 @@
-import { processPuzzleData } from './puzzle_2';
+import { processPuzzleData } from './main';
 
 describe(`${processPuzzleData.name}()`, () => {
   test.each([

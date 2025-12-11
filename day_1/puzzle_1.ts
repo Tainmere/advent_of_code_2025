@@ -1,4 +1,4 @@
-import { readPuzzleInput, readPuzzleInputAsStream } from '../utils/importPuzzle';
+import { readMultilinePuzzleInput } from '../utils/importPuzzle';
 import { Instruction, Position, ZeroCount } from './types';
 import { processPuzzleInstruction } from './puzzle_1_utils';
 import { writeSolution } from '../utils/writeSolution';
@@ -9,7 +9,7 @@ const digitCount = 100;
 const readPuzzleData = async () => {
   const puzzleLocation = 'day_1/puzzle_1_input.txt';
 
-  const data: Instruction[] = await readPuzzleInput(puzzleLocation);
+  const data: Instruction[] = await readMultilinePuzzleInput(puzzleLocation);
   return data;
 };
 

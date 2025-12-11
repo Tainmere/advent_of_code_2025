@@ -1,13 +1,20 @@
 import fsPromise from 'node:fs/promises';
 import fs from 'node:fs';
+import path from 'node:path';
 
 // https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs
 
 export const readPuzzleInput = async (path_to_puzzle: string) => {
   const loadingFileMessage = `Loading file '${path_to_puzzle} took`;
   console.time(loadingFileMessage);
-  let dataAsString = await fsPromise.readFile(path_to_puzzle, { encoding: 'utf8' });
+  let data = await fsPromise.readFile(path_to_puzzle, { encoding: 'utf8' });
   console.timeEnd(loadingFileMessage);
+
+  return data;
+};
+
+export const readMultilinePuzzleInput = async (path_to_puzzle: string) => {
+  let dataAsString = await readPuzzleInput(path_to_puzzle);
 
   const parsingFileMessage = `Parsing file '${path_to_puzzle} took`;
   console.time(parsingFileMessage);

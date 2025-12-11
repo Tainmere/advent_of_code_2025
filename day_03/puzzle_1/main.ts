@@ -3,7 +3,7 @@ import { writeSolution } from '../../utils/writeSolution';
 
 const puzzlePath = 'day_03/puzzle_input.txt';
 
-const solvePuzzle = async () => {
+export const solvePuzzle = async () => {
   const data: string[] = await readMultilinePuzzleInput(puzzlePath);
   const result = calculateTotalJotage(data);
   writeSolution('day_03/solution_1', `Total joltage is ${result}.\n`);
@@ -32,5 +32,3 @@ export const findMaxJoltage = (bank: string) => {
   const result = parseInt([highestVoltage, secondHighestVoltage].join(''));
   return result;
 };
-
-// solvePuzzle();

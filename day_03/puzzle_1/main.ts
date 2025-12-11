@@ -28,8 +28,9 @@ export const findMaxJoltage = (bank: string) => {
     .toSorted()
     .toReversed()[0];
 
+  // const result = [highestVoltage, secondHighestVoltage].join('') |> parseInt
   const result = parseInt([highestVoltage, secondHighestVoltage].join(''));
   return result;
 };
 
-solvePuzzle();
+// solvePuzzle();

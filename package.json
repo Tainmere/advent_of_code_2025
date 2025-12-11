@@ -8,6 +8,7 @@
   "type": "module",
   "devDependencies": {
     "@babel/core": "^7.28.5",
+    "@babel/plugin-proposal-pipeline-operator": "^7.27.1",
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@types/ejs": "^3.1.5",
@@ -29,6 +30,6 @@
     "test:watch": "jest --watch",
     "solve:day_01": "npx tsx day_01/puzzle_1/main.ts && npx tsx day_01/puzzle_2/main.ts",
     "solve:day_02": "npx tsx day_02/puzzle_1/main.ts && npx tsx day_02/puzzle_2/main.ts",
-    "solve:day_03": "npx tsx day_03/puzzle_1/main.ts"
+    "solve:day_03": "npx tsx day_03/puzzle_1/main.ts && npx tsx day_03/puzzle_2/main.ts"
   }
 }

@@ -1,3 +1,5 @@
+- puzzles: https://adventofcode.com/2025/day/1
+
 ## Puzzle 1
 
 - figure out password

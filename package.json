@@ -28,6 +28,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "solve:day_01": "npx tsx day_01/puzzle_1/main.ts && npx tsx day_01/puzzle_2/main.ts",
-    "solve:day_02": "npx tsx day_02/puzzle_1/main.ts && npx tsx day_02/puzzle_2/main.ts"
+    "solve:day_02": "npx tsx day_02/puzzle_1/main.ts && npx tsx day_02/puzzle_2/main.ts",
+    "solve:day_03": "npx tsx day_03/puzzle_1/main.ts"
   }
 }

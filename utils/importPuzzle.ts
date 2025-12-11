@@ -2,6 +2,8 @@ import fsPromise from 'node:fs/promises';
 import fs from 'node:fs';
 import path from 'node:path';
 
+const carriageReturn = '\r';
+
 // https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs
 
 export const readPuzzleInput = async (path_to_puzzle: string) => {
@@ -15,6 +17,10 @@ export const readPuzzleInput = async (path_to_puzzle: string) => {
 
 export const readMultilinePuzzleInput = async (path_to_puzzle: string) => {
   let dataAsString = await readPuzzleInput(path_to_puzzle);
+
+  if (dataAsString.includes(carriageReturn)) {
+    dataAsString = dataAsString.replaceAll(carriageReturn, '');
+  }
 
   const parsingFileMessage = `Parsing file '${path_to_puzzle} took`;
   console.time(parsingFileMessage);

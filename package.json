@@ -30,6 +30,7 @@
     "solve:day_02": "npx tsx day_02/puzzle_1/main.ts && npx tsx day_02/puzzle_2/main.ts",
     "solve:day_03": "npx tsx day_03/solvePuzzles.ts",
     "solve:day_04": "npx tsx day_04/solvePuzzles.ts",
+    "solve:day_05": "npx tsx day_05/solvePuzzles.ts",
     "test": "jest",
     "test:watch": "jest --watch"
   }
